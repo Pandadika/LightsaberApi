@@ -9,18 +9,32 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/lightsaberItem")
 public class LightsaberItemController {
-    LightsaberItemRepository lightsaberItemRepository;
-    public LightsaberItemController(LightsaberItemRepository lightsaber) {
-        lightsaberItemRepository = lightsaber;
-    }
+  LightsaberItemRepository lightsaberItemRepository;
+  public LightsaberItemController(LightsaberItemRepository lightsaber) {
+    lightsaberItemRepository = lightsaber;
+  }
 
-    @PostMapping()
-    UUID create(@RequestBody Item item) {
-        lightsaberItemRepository.save(item);
-        return item.getId();
+  @PostMapping()
+  UUID create(@RequestBody Item item) {
+    if (item.getId() == null) {
+      item.setId(UUID.randomUUID());
     }
-    @GetMapping()
-    List<Item> getAll(){
-        return lightsaberItemRepository.findAll();
-    }
+    lightsaberItemRepository.save(item);
+    return item.getId();
+  }
+
+  @GetMapping()
+  List<Item> getAll(){
+    return lightsaberItemRepository.findAll();
+  }
+
+  @DeleteMapping("/{id}")
+  void delete(@PathVariable UUID id) {
+    lightsaberItemRepository.deleteById(id);
+  }
+
+  @PostMapping("/update/{id}")
+  void update(@PathVariable UUID id, @RequestBody Item item) {
+    lightsaberItemRepository.save(item);
+  }
 }

@@ -8,8 +8,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @EntityScan(basePackages = {"com.jedi.jedishared"})
 public class LightsaberApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(LightsaberApplication.class, args);
-    }
-
+  public static void main(String[] args) {
+    SpringApplication.run(LightsaberApplication.class, args);
+  }
 }
