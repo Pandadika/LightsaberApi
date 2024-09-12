@@ -97,6 +97,7 @@ public class UserController {
       updatedUser.setSurName(user.getSurName());
       updatedUser.setEmail(user.getEmail());
       updatedUser.getBoughtItems().clear();
+
       //updatedUser.getBoughtItems().addAll(user.getBoughtItems());
 
       userRepository.save(updatedUser);
