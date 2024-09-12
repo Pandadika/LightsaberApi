@@ -88,7 +88,9 @@ public class UserController {
     Optional<User> existingUser = userRepository.findById(username);
     if (existingUser.isPresent()) {
       User updatedUser = existingUser.get();
-      updatedUser.setPassword(passwordEncoder.encode(user.getPassword()));
+      if (user.getPassword() != null && !user.getPassword().isBlank()){
+        updatedUser.setPassword(passwordEncoder.encode(user.getPassword()));
+      }
       updatedUser.setBoughtItems(new ArrayList<>());
       updatedUser.setIsAdmin(user.isAdmin());
       updatedUser.setFirstName(user.getFirstName());

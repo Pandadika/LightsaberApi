@@ -3,6 +3,7 @@ package com.example.lightsaber;
 import com.jedi.jedishared.Item;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,6 +22,19 @@ public class LightsaberItemController {
     }
     lightsaberItemRepository.save(item);
     return item.getId();
+  }
+
+  @PostMapping("/createAlot")
+  List<UUID> createAlot(@RequestBody List<Item> items){
+    List<UUID> result = new ArrayList<UUID>();
+    for (Item item : items) {
+      if (item.getId() == null) {
+        item.setId(UUID.randomUUID());
+      }
+      result.add(item.getId());
+    }
+    lightsaberItemRepository.saveAll(items);
+    return result;
   }
 
   @GetMapping()
