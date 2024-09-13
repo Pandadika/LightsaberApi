@@ -2,7 +2,7 @@
 
 ### Add maven secrets `\apache-maven-3.9.9\conf\settings.xml`
 
-``` json
+``` xml
 <settings>
   <servers>
     <server>
