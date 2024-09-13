@@ -39,7 +39,7 @@
 POST to `localhost:8080/user/create`
 ``` json
 {
-    "username":"admin2",
+    "username":"admin",
     "password": "Passw0rd",
     "isAdmin": true
 }
