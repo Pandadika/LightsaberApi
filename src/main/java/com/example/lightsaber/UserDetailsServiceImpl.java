@@ -1,5 +1,6 @@
 package com.example.lightsaber;
 
+import com.example.lightsaber.repos.UserRepository;
 import com.jedi.jedishared.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

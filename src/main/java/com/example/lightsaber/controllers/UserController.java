@@ -1,7 +1,9 @@
-package com.example.lightsaber;
+package com.example.lightsaber.controllers;
 
+import com.example.lightsaber.JwtResponse;
+import com.example.lightsaber.JwtUtil;
+import com.example.lightsaber.repos.UserRepository;
 import com.jedi.jedishared.User;
-import org.hibernate.collection.spi.PersistentList;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

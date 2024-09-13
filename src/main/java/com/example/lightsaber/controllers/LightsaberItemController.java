@@ -1,5 +1,6 @@
-package com.example.lightsaber;
+package com.example.lightsaber.controllers;
 
+import com.example.lightsaber.repos.LightsaberItemRepository;
 import com.jedi.jedishared.Item;
 import org.springframework.web.bind.annotation.*;
 

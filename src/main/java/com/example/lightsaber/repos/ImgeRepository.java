@@ -1,4 +1,4 @@
-package com.example.lightsaber;
+package com.example.lightsaber.repos;
 
 import com.jedi.jedishared.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
