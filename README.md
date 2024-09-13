@@ -1,8 +1,8 @@
-#LightsaberApi
+# LightsaberApi
 
-###Add maven secrets `\apache-maven-3.9.9\conf\settings.xml`
+### Add maven secrets `\apache-maven-3.9.9\conf\settings.xml`
 
-```json
+``` json
 <settings>
   <servers>
     <server>
@@ -35,9 +35,9 @@
 </settings>
 ```
 
-###How to add an admin user 
+### How to add an admin user 
 POST to `localhost:8080/user/create`
-```json
+``` json
 {
     "username":"admin2",
     "password": "Passw0rd",
